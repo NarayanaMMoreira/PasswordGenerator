@@ -12,3 +12,7 @@ This Password Generator is a versatile tool that allows users to create customiz
 - Include uppercase letters
 - Generate random passwords based on user preferences
 
+### Recent Changes (Version 1.1)
+
+- Increased the quantity of possible numbers in the generated passwords.
+- Included "." as a possible special character in the generated passwords.

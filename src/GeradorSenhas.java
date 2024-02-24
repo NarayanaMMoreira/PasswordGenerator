@@ -2,7 +2,7 @@ import java.security.SecureRandom;
 
 public class GeradorSenhas {
     public static String gerarSenha(int comprimento, int especiais, int maiusculas, int numeros){
-        String caracteresEspeciais = "!@#$%&*";
+        String caracteresEspeciais = "!.@#$%&*";
         String todasLetrasMaiusculas = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         String todasLetrasMinusculas = "abcdefghijklmnopqrstuvwxyz";
         String todosNumeros = "0123456789";

@@ -42,7 +42,7 @@ public class GeradorSenhasGUI extends JFrame {
         panel.add(maiusculasComboBox);
 
         panel.add(new JLabel("Quantidade de Números:"));
-        numerosComboBox = new JComboBox<>(criarArrayDeNumeros(0, 9));
+        numerosComboBox = new JComboBox<>(criarArrayDeNumeros(0, 20));
         panel.add(numerosComboBox);
 
         JButton gerarButton = new JButton("Gerar Senha");
