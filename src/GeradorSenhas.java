@@ -1,4 +1,5 @@
 import java.security.SecureRandom;
+import java.util.Random;
 
 public class GeradorSenhas {
     public static String gerarSenha(int comprimento, int especiais, int maiusculas, int numeros){
@@ -15,28 +16,13 @@ public class GeradorSenhas {
         SecureRandom random = new SecureRandom();
         StringBuilder senha = new StringBuilder();
 
-        for(int i = 0; i < maiusculas; i++) {
-            int indice = random.nextInt(todasLetrasMaiusculas.length());
-            senha.append(todasLetrasMaiusculas.charAt(indice));
-        }
-
-        for(int i = 0; i < especiais; i++) {
-            int indice = random.nextInt(caracteresEspeciais.length());
-            senha.append(caracteresEspeciais.charAt(indice));
-        }
-
-        for(int i = 0; i < numeros; i++) {
-            int indice = random.nextInt(todosNumeros.length());
-            senha.append(todosNumeros.charAt(indice));
-        }
+        senha.append(generateRandomCharacters(maiusculas, todasLetrasMaiusculas, random));
+        senha.append(generateRandomCharacters(especiais, caracteresEspeciais, random));
+        senha.append(generateRandomCharacters(numeros, todosNumeros, random));
         
-        int restante = comprimento - especiais - maiusculas - numeros;
+        int minusculas = comprimento - especiais - maiusculas - numeros;
 
-        for(int i = 0; i < restante; i++) {
-            int indice = random.nextInt(todasLetrasMinusculas.length());
-            senha.append(todasLetrasMinusculas.charAt(indice));
-
-        }
+        senha.append(generateRandomCharacters(minusculas, todasLetrasMinusculas, random));
         
         char[] senhaEmbaralhada = senha.toString().toCharArray();
         for (int i = senhaEmbaralhada.length - 1; i > 0; i--) {
@@ -47,5 +33,14 @@ public class GeradorSenhas {
         }
 
         return new String(senhaEmbaralhada);
+    }
+
+    private static String generateRandomCharacters(int count, String source, Random random) {
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < count; i++) {
+            int indice = random.nextInt(source.length());
+            result.append(source.charAt(indice));
+        }
+        return result.toString();
     }
 }
