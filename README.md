@@ -6,13 +6,14 @@ This Password Generator is a versatile tool that allows users to create customiz
 
 ## Features
 
-- Customize password length
-- Include special characters
-- Include numbers
-- Include uppercase letters
-- Generate random passwords based on user preferences
+- Customize the password length.
+- Choose the number of special characters and uppercase letters.
+- Generate secure and random passwords.
 
-### Recent Changes (Version 1.1)
+## Requirements
 
-- Increased the quantity of possible numbers in the generated passwords.
-- Included "." as a possible special character in the generated passwords.
+- Java Development Kit (JDK) installed.
+
+## Contributions
+
+Feel free to contribute improvements, bug fixes, or new features. Just open a pull request, and I'll be happy to review
